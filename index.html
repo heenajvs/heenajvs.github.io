@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Heena Ugale — Senior Solutions Engineer, AI</title>
+<meta name="description" content="Heena Ugale — Senior Solutions Engineer, AI at Microsoft. Agentic AI, from proof of concept to production, with independent software vendors.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #3a2924; --ink-soft: #7a625a;
+    --rose: #b8656b; --rose-deep: #9a4f56; --clay: #b07a5c;
+    --paper: #fbf6f3; --paper-2: #f3e8e3; --blush: #ead7d2; --rule: #e2cfc8;
+    --serif: "Fraunces", "Iowan Old Style", Georgia, serif;
+    --sans: "Source Sans 3", "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; font-family: var(--sans); font-size: 15px; line-height: 1.5; color: var(--ink); background: var(--paper); }
+  a { color: var(--rose-deep); text-decoration: none; }
+  a:hover, a:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+  :focus-visible { outline: 3px solid var(--rose); outline-offset: 3px; }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 600; letter-spacing: -0.01em; line-height: 1.08; margin: 0; }
+  p { margin: 0 0 10px; }
+  .kick { font-size: 11px; letter-spacing: .10em; text-transform: uppercase; color: var(--rose-deep); margin-bottom: 6px; }
+  .soft { color: var(--ink-soft); }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 22px 24px 32px; }
+
+  header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 14px; }
+  header h1 { font-size: 28px; }
+  header .links { font-size: 14px; display: flex; gap: 18px; flex-wrap: wrap; }
+  header .links a { color: var(--ink-soft); }
+  header .links a.nav { color: var(--rose-deep); font-weight: 600; }
+
+  .btn { display: inline-block; text-align: center; font-weight: 600; font-size: 14px; padding: 9px 16px; border: 1.5px solid var(--rose); border-radius: 6px; color: var(--rose-deep); background: transparent; transition: background .15s, color .15s; }
+  .btn:hover, .btn:focus-visible { background: var(--blush); text-decoration: none; }
+  .btn.primary { background: var(--rose); border-color: var(--rose); color: #fff; }
+  .btn.primary:hover, .btn.primary:focus-visible { background: var(--rose-deep); border-color: var(--rose-deep); }
+  .btn.clay { border-color: var(--clay); color: var(--clay); }
+  .btn.clay:hover, .btn.clay:focus-visible { background: #f0e0d6; color: #8a5a3e; }
+
+  .tile { background: #fff; border: 1px solid var(--rule); border-radius: 14px; padding: 18px 20px; min-width: 0; }
+  .tile h2 { font-size: 22px; margin-bottom: 6px; }
+  .tint { background: var(--paper-2); }
+
+  /* ---------- top block: intro ---------- */
+  .lead { margin-bottom: 14px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 22px; align-items: center; }
+  .lead .ph img { width: 100%; height: auto; display: block; border-radius: 10px; border: 1px solid var(--rule); }   /* full photo, never cropped */
+  .lead h2 { font-size: 32px; line-height: 1.05; margin: 4px 0 10px; }
+  .lead p { color: #4a3a35; max-width: 64ch; }
+  .lead .cta { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
+
+  /* ---------- the two columns ---------- */
+  .cols { display: grid; grid-template-columns: 1fr 1.3fr; gap: 14px; align-items: stretch; }
+  .left, .right { display: grid; grid-auto-rows: auto; gap: 14px; align-content: start; }
+  .placeholder { min-height: 300px; display: flex; align-items: center; justify-content: center; color: var(--ink-soft); font-size: 14px; border-style: dashed; }
+
+  /* ---------- right column: workshop ---------- */
+  .ws .kick a { color: var(--rose-deep); }
+  .ws h2 { font-size: 26px; margin-bottom: 8px; }
+  .ws .one { font-size: 14.5px; color: #4a3a35; line-height: 1.5; margin: 0 0 14px; max-width: 60ch; }
+  .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 0 0 16px; }
+  .metrics div { border-top: 2px solid var(--rose); padding-top: 7px; }
+  .metrics b { font-family: var(--serif); font-size: 26px; font-weight: 600; color: var(--rose-deep); display: block; line-height: 1; }
+  .metrics span { font-size: 11px; color: var(--ink-soft); text-transform: uppercase; letter-spacing: .08em; }
+
+  /* ---------- carousel ---------- */
+  .carousel { border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; background: var(--paper-2); }
+  .carousel .track { display: flex; transition: transform .35s ease; }
+  .carousel .slide { flex: 0 0 100%; min-width: 0; }
+  .carousel .slide .label { font-family: var(--serif); font-size: 17px; font-weight: 600; padding: 10px 14px; background: #fff; border-bottom: 1px solid var(--rule); }
+  .carousel .slide .label span { font-family: var(--sans); font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--rose-deep); margin-right: 8px; }
+  .carousel .slide img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: contain; display: block; cursor: zoom-in; background: var(--paper-2); }
+  .carousel .ctl { display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; background: #fff; border-top: 1px solid var(--rule); font-size: 12.5px; color: var(--ink-soft); }
+  .carousel .dots { display: flex; gap: 7px; }
+  .carousel .dots button { width: 8px; height: 8px; border-radius: 50%; border: 1.5px solid var(--rose); background: transparent; padding: 0; cursor: pointer; }
+  .carousel .dots button[aria-current="true"] { background: var(--rose); }
+  .carousel .arrows button { font: inherit; font-weight: 600; font-size: 13px; color: var(--rose-deep); background: transparent; border: 1.5px solid var(--rose); border-radius: 6px; padding: 5px 10px; cursor: pointer; margin-left: 6px; }
+  .carousel .arrows button:hover { background: var(--blush); }
+  .lightbox { position: fixed; inset: 0; background: rgba(58,41,36,.92); display: none; align-items: center; justify-content: center; padding: 24px; z-index: 50; cursor: zoom-out; }
+  .lightbox.open { display: flex; }
+  .lightbox img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 8px; background: #fff; }
+  .lightbox .x { position: absolute; top: 14px; right: 18px; color: #fff; font-size: 28px; background: none; border: 0; cursor: pointer; }
+
+  /* ---------- left column: speaking & recognition ---------- */
+  .blk h2 { font-size: 22px; margin-bottom: 8px; }
+  .talk { font-family: var(--serif); font-size: 16px; font-weight: 500; line-height: 1.3; margin: 2px 0 6px; }
+  .list { list-style: none; margin: 0; padding: 0; }
+  .list li { border-top: 1px solid var(--rule); padding: 8px 0; font-size: 14px; display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: baseline; }
+  .list li:first-child { border-top: 0; padding-top: 0; }
+  .list .w { color: var(--ink-soft); font-size: 13px; white-space: nowrap; }
+  .list li a { color: var(--ink); font-family: var(--serif); font-size: 15.5px; font-weight: 500; line-height: 1.3; }
+  .grp { font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft); margin: 16px 0 6px; padding-bottom: 5px; border-bottom: 2px solid var(--blush); }
+  .grp:first-of-type { margin-top: 4px; }
+  .rec { list-style: none; margin: 0; padding: 0; }
+  .rec li { display: grid; grid-template-columns: 56px 1fr; gap: 12px; align-items: center; border-top: 1px solid var(--rule); padding: 8px 0; }
+  .rec li:first-child { border-top: 0; padding-top: 0; }
+  .rec img, .rec svg { width: 56px; height: 56px; object-fit: contain; display: block; }
+  .rec li.pair { grid-template-columns: 116px 1fr; }
+  .rec.sm li { grid-template-columns: 44px 1fr; padding: 6px 0; }
+  .rec.sm b { font-size: 15px; }
+  .rec .imgs { display: flex; gap: 4px; }
+  .rec b { display: block; font-family: var(--serif); font-size: 15.5px; font-weight: 600; line-height: 1.2; }
+  .rec span { font-size: 12.5px; color: var(--ink-soft); }
+
+  /* ---------- writing strip ---------- */
+  .strip { margin-top: 14px; }
+  .strip .posts { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px 24px; }
+  .strip .posts li { font-size: 14px; line-height: 1.35; }
+  .strip .posts a { font-family: var(--serif); font-size: 15px; font-weight: 500; color: var(--ink); }
+  .strip .posts .w { display: block; font-size: 12px; color: var(--ink-soft); margin-top: 2px; }
+
+  /* ---------- research: auto-scrolling strip ---------- */
+  .research { margin-top: 14px; overflow: hidden; }
+  .research .rail { display: flex; gap: 14px; width: max-content; animation: roll 60s linear infinite; padding: 4px 0; }
+  .research:hover .rail, .research:focus-within .rail { animation-play-state: paused; }
+  @keyframes roll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) { .research .rail { animation: none; width: auto; flex-wrap: wrap; } .research .rail .card.dup { display: none; } }
+  .card { flex: 0 0 300px; border: 1px solid var(--rule); border-radius: 10px; background: var(--paper); padding: 14px 16px; }
+  .card svg { width: 100%; height: 110px; display: block; margin-bottom: 10px; }
+  .card b { display: block; font-family: var(--serif); font-size: 16px; font-weight: 600; line-height: 1.2; margin-bottom: 4px; }
+  .card p { font-size: 13px; color: var(--ink-soft); margin: 0 0 6px; line-height: 1.4; }
+  .card .w { font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--rose-deep); }
+
+  .speakwide { margin-top: 14px; }
+  .speakwide .rec.sm { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px 28px; }
+  .speakwide .rec.sm li { border-top: 0; padding: 8px 0; }
+  .speakwide .rec.sm li:nth-child(n+4) { border-top: 1px solid var(--rule); }
+  .speakwide .cta-row { display: flex; justify-content: flex-end; }
+  @media (max-width: 900px) { .speakwide .rec.sm { grid-template-columns: 1fr; } .speakwide .rec.sm li { border-top: 1px solid var(--rule); } .speakwide .rec.sm li:first-child { border-top: 0; } }
+  .badges { margin-top: 14px; padding: 16px 20px; }
+  .badges .row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; margin-top: 6px; }
+  .badges img { height: 84px; width: auto; display: block; }
+  @media (max-width: 900px) { .badges .row { justify-content: center; } .badges img { height: 64px; } }
+
+  footer { margin-top: 14px; font-size: 12px; color: var(--ink-soft); }
+
+  @media (max-width: 900px) {
+    .cols { grid-template-columns: 1fr; }
+    .strip .posts { grid-template-columns: 1fr; }
+    .lead { grid-template-columns: 1fr; }
+    .metrics { grid-template-columns: 1fr 1fr; }
+    .lead h2 { font-size: 28px; }
+  }
+  @media (max-width: 560px) { .wrap { padding: 18px 14px 28px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- ============================ HEADER (common, full width) ============================ -->
+<header>
+  <h1>Heena Ugale</h1>
+  <div class="links">
+    <a href="mailto:heenajvs@gmail.com">heenajvs@gmail.com</a>
+    <a href="https://www.linkedin.com/in/heena-ugale/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/heenajvs" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://medium.com/@heenajvs" target="_blank" rel="noopener">Medium</a>
+    <a class="nav" href="research.html">Research →</a>
+  </div>
+</header>
+
+<div class="tile tint lead">
+  <div>
+  <div class="kick">Senior Solutions Engineer, AI · Microsoft</div>
+  <h2>Agentic AI, from proof of concept to production.</h2>
+  <p>Working with independent software vendors on agentic architectures, LLM evaluation frameworks and MCP-driven multi-agent orchestration. Eight years in applied AI across biotech, retail, manufacturing, HR and payroll software, network security and real estate technology.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://cal.com/heena-ugale-spuk6j/quicksync" target="_blank" rel="noopener">Book a conversation</a>
+    <a class="btn primary" href="https://cal.com/heena-ugale-spuk6j/15min" target="_blank" rel="noopener">Invite me to speak</a>
+  </div>
+  </div>
+  <div class="ph"><img src="assets/speaking-1.jpg" alt="Heena Ugale presenting at Microsoft MLADS" width="1536" height="1024"></div>
+</div>
+
+<!-- ============================ TWO COLUMNS ============================ -->
+<div class="cols">
+  <div class="left">
+    <div class="tile blk" id="writing">
+      <div class="kick">Writing</div>
+      <h2>Blog posts</h2>
+      <div class="grp">Microsoft Tech Community</div>
+      <ul class="list">
+        <li><a href="https://techcommunity.microsoft.com/blog/azuredevcommunityblog/orchestrating-multi-agent-intelligence-mcp-driven-patterns-in-agent-framework/4462150" target="_blank" rel="noopener">Orchestrating Multi-Agent Intelligence: MCP-Driven Patterns in Agent Framework</a><span class="w">Azure Developer Community · 2025</span></li>
+        <li><a href="https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/building-human-in-the-loop-ai-workflows-with-microsoft-agent-framework/4460342" target="_blank" rel="noopener">Building Human-in-the-loop AI Workflows with Microsoft Agent Framework</a><span class="w">Azure AI Foundry Blog · 2025</span></li>
+      </ul>
+      <div class="grp">Medium</div>
+      <ul class="list">
+        <li><a href="https://medium.com/@heenajvs/token-economics-of-an-mcp-agent-the-menu-is-63-of-the-bill-8adb6ec9ac49" target="_blank" rel="noopener">Tokenomics of an MCP agent — the menu is 63% of the bill</a><span class="w">2026</span></li>
+        <li><a href="https://medium.com/@heenajvs/designing-multi-agent-enterprise-architecture-part-1-discovery-b26d2cea21a9" target="_blank" rel="noopener">Designing Multi-Agent Enterprise Architecture — Part 1: Discovery</a><span class="w">2026</span></li>
+        <li><a href="https://medium.com/@heenajvs/estimating-the-cost-of-voice-ai-with-azure-speech-voice-live-9fd9c746147f" target="_blank" rel="noopener">Inside Azure Voice Live API: Speech to Text + LLM Reasoning + Text to Speech</a><span class="w">2026</span></li>
+        <li><a href="https://medium.com/@heenajvs/two-taxes-your-mcp-agent-is-paying-and-the-two-simple-patterns-that-fix-them-1691e783ccac" target="_blank" rel="noopener">Two taxes your MCP agent is paying (and the two simple patterns that fix them)</a><span class="w">2026</span></li>
+        <li><a href="https://medium.com/@heenajvs/why-evaluating-ai-agents-is-harder-than-traditional-ml-a-real-world-customer-support-use-case-f1fec4c1a870" target="_blank" rel="noopener">Why Evaluating AI Agents Is Harder Than Traditional ML — a real-world customer-support use case</a><span class="w">2026</span></li>
+        <li><a href="https://medium.com/@heenajvs/understanding-mcp-across-agentic-ai-platforms-22e361ce97d5" target="_blank" rel="noopener">Understanding MCP Across Agentic AI Platforms</a><span class="w">2026</span></li>
+        <li><a href="https://medium.com/@heenajvs/hosted-agents-in-foundry-oob-evals-cea1539b9f0d" target="_blank" rel="noopener">Hosted Agents in Foundry + out-of-the-box evals</a><span class="w">2026</span></li>
+        <li><a href="https://medium.com/@heenajvs/semantic-re-ranker-yields-best-search-results-among-different-search-methods-in-azure-ai-search-b57d6bdc57f3" target="_blank" rel="noopener">Semantic re-ranker yields the best results among search methods in Azure AI Search</a><span class="w">2025</span></li>
+        <li><a href="https://medium.com/@heenajvs/decision-tree-rf-xgboost-a6447500ca63" target="_blank" rel="noopener">Decision Tree / Random Forest / XGBoost</a><span class="w">2023</span></li>
+      </ul>
+      <p style="margin-top:12px"><a class="btn" href="https://medium.com/@heenajvs" target="_blank" rel="noopener">All posts on Medium</a></p>
+    </div>
+  </div>
+  <div class="right">
+  <div class="tile ws" id="right-top">
+    <div class="kick">Open source · MIT · <a href="https://github.com/microsoft/OpenAIWorkshop" target="_blank" rel="noopener">github.com/microsoft/OpenAIWorkshop</a></div>
+    <h2>Microsoft AI Agentic Workshop</h2>
+    <p class="one" >Open-source reference implementation for enterprise agentic AI, used for internal and customer training and presented at Microsoft's internal research conferences. Co-developer — I built the multi-agent communication patterns and the evaluation framework.</p>
+    <div class="metrics">
+      <div><b>894</b><span>GitHub stars</span></div>
+      <div><b>477</b><span>forks</span></div>
+      <!-- TODO: confirm the customer number -->
+      <div><b>1,000+</b><span>customers trained</span></div>
+      <div><b>20+</b><span>domains</span></div>
+    </div>
+
+    <div class="carousel" id="gallery" aria-roledescription="carousel" aria-label="Workshop architecture">
+      <div class="track">
+        <div class="slide" role="group" aria-label="1 of 3">
+          <div class="label"><span>01</span>Agentic communication patterns</div>
+          <img src="assets/carousel-communication.png" alt="Agentic communication patterns">
+        </div>
+        <div class="slide" role="group" aria-label="2 of 3">
+          <div class="label"><span>02</span>Token economics</div>
+          <img src="assets/carousel-economics.png" alt="Token economics — three ways to show the model fewer, better-chosen tools">
+        </div>
+        <div class="slide" role="group" aria-label="3 of 3">
+          <div class="label"><span>03</span>Observability &amp; evaluation</div>
+          <img src="assets/carousel-observability.png" alt="Observability and evaluation">
+        </div>
+      </div>
+      <div class="ctl">
+        <span class="status">1 / 3 — click an image to enlarge</span>
+        <div style="display:flex;align-items:center;gap:12px">
+          <div class="dots" role="tablist"></div>
+          <div class="arrows"><button type="button" data-dir="-1" aria-label="Previous">‹ Prev</button><button type="button" data-dir="1" aria-label="Next">Next ›</button></div>
+        </div>
+      </div>
+    </div>
+    <p style="margin:14px 0 0"><a class="btn" href="https://github.com/microsoft/OpenAIWorkshop" target="_blank" rel="noopener">View the repo on GitHub</a></p>
+  </div>
+  </div>
+</div>
+
+<div class="tile badges" id="recognition">
+  <div class="kick">Accomplishments as a technical seller at Microsoft</div>
+  <div class="row">
+    <img src="assets/badge-attainment-2025.png" alt="100% Attainment 2025" title="100% Attainment — 2025">
+    <img src="assets/badge-attainment-2026.png" alt="100% Attainment 2026" title="100% Attainment — 2026">
+    <img src="assets/badge-culture-fy25q1.png" alt="Living Our Culture Award" title="Living Our Culture Award">
+    <img src="assets/badge-ai-powered-selling-innovator.png" alt="Microsoft AI-Powered Selling Innovator" title="Microsoft AI-Powered Selling — Innovator (MCAPS Academy)">
+    <img src="assets/badge-frontier-firm-2026.png" alt="Frontier Firm Roadshow 2026" title="Frontier Firm Roadshow — Frontier Transformation Ready, 2026">
+    <img src="assets/badge-mlads-presenter-2026.png" alt="MLADS+ Presenter, June 2026" title="MLADS+ Presenter — Making AI Safer and More Secure, June 2026">
+    <img src="assets/badge-mlads-reviewer-2026.png" alt="MLADS Conference Reviewer, June 2026" title="MLADS Conference Reviewer — June 2026">
+    <img src="assets/badge-hackathon-2024.png" alt="Microsoft Global Hackathon 2024" title="Microsoft Global Hackathon — Participant, 2024">
+    <img src="assets/badge-hackathon-2025.png" alt="Microsoft Global Hackathon 2025" title="Microsoft Global Hackathon — Participant, 2025">
+  </div>
+</div>
+
+<footer>© 2026 Heena Ugale</footer>
+</div>
+<div class="lightbox" id="lightbox" role="dialog" aria-label="Enlarged image"><button class="x" type="button" aria-label="Close">×</button><img src="" alt=""></div>
+<script>
+(function () {
+  var c = document.getElementById('gallery'), track = c.querySelector('.track'),
+      slides = c.querySelectorAll('.slide'), dots = c.querySelector('.dots'),
+      status = c.querySelector('.status'), i = 0, n = slides.length;
+  for (var k = 0; k < n; k++) {
+    var b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-label', 'Go to slide ' + (k + 1));
+    b.addEventListener('click', (function (k) { return function () { go(k); }; })(k)); dots.appendChild(b);
+  }
+  function go(k) {
+    i = (k + n) % n; track.style.transform = 'translateX(-' + (i * 100) + '%)';
+    status.textContent = (i + 1) + ' / ' + n + ' — click an image to enlarge';
+    var ds = dots.children; for (var j = 0; j < n; j++) ds[j].setAttribute('aria-current', j === i ? 'true' : 'false');
+  }
+  c.querySelectorAll('.arrows button').forEach(function (b) { b.addEventListener('click', function () { go(i + Number(b.dataset.dir)); }); });
+  c.addEventListener('keydown', function (e) { if (e.key === 'ArrowRight') go(i + 1); if (e.key === 'ArrowLeft') go(i - 1); });
+  var x0 = null;
+  c.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+  c.addEventListener('touchend', function (e) { if (x0 === null) return; var dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) go(i + (dx < 0 ? 1 : -1)); x0 = null; });
+  c.tabIndex = 0; go(0);
+  var lb = document.getElementById('lightbox'), lbImg = lb.querySelector('img');
+  c.querySelectorAll('.slide img').forEach(function (im) { im.addEventListener('click', function () { lbImg.src = im.src; lbImg.alt = im.alt; lb.classList.add('open'); }); });
+  lb.addEventListener('click', function () { lb.classList.remove('open'); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') lb.classList.remove('open'); });
+})();
+</script>
+</body>
+</html>

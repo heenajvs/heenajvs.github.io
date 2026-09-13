@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research — Heena Ugale</title>
+<meta name="description" content="Heena Ugale — Senior Solutions Engineer, AI at Microsoft. Agentic AI, from proof of concept to production, with independent software vendors.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #3a2924; --ink-soft: #7a625a;
+    --rose: #b8656b; --rose-deep: #9a4f56; --clay: #b07a5c;
+    --paper: #fbf6f3; --paper-2: #f3e8e3; --blush: #ead7d2; --rule: #e2cfc8;
+    --serif: "Fraunces", "Iowan Old Style", Georgia, serif;
+    --sans: "Source Sans 3", "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; font-family: var(--sans); font-size: 15px; line-height: 1.5; color: var(--ink); background: var(--paper); }
+  a { color: var(--rose-deep); text-decoration: none; }
+  a:hover, a:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+  :focus-visible { outline: 3px solid var(--rose); outline-offset: 3px; }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 600; letter-spacing: -0.01em; line-height: 1.08; margin: 0; }
+  p { margin: 0 0 10px; }
+  .kick { font-size: 11px; letter-spacing: .10em; text-transform: uppercase; color: var(--rose-deep); margin-bottom: 6px; }
+  .soft { color: var(--ink-soft); }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 22px 24px 32px; }
+
+  header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 14px; }
+  header h1 { font-size: 28px; }
+  header .links { font-size: 14px; display: flex; gap: 18px; flex-wrap: wrap; }
+  header .links a { color: var(--ink-soft); }
+  header .links a.nav { color: var(--rose-deep); font-weight: 600; }
+
+  .btn { display: inline-block; text-align: center; font-weight: 600; font-size: 14px; padding: 9px 16px; border: 1.5px solid var(--rose); border-radius: 6px; color: var(--rose-deep); background: transparent; transition: background .15s, color .15s; }
+  .btn:hover, .btn:focus-visible { background: var(--blush); text-decoration: none; }
+  .btn.primary { background: var(--rose); border-color: var(--rose); color: #fff; }
+  .btn.primary:hover, .btn.primary:focus-visible { background: var(--rose-deep); border-color: var(--rose-deep); }
+  .btn.clay { border-color: var(--clay); color: var(--clay); }
+  .btn.clay:hover, .btn.clay:focus-visible { background: #f0e0d6; color: #8a5a3e; }
+
+  .tile { background: #fff; border: 1px solid var(--rule); border-radius: 14px; padding: 18px 20px; min-width: 0; }
+  .tile h2 { font-size: 22px; margin-bottom: 6px; }
+  .tint { background: var(--paper-2); }
+
+  /* ---------- top block: intro ---------- */
+  .lead { margin-bottom: 14px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 22px; align-items: center; }
+  .lead .ph img { width: 100%; height: auto; display: block; border-radius: 10px; border: 1px solid var(--rule); }   /* full photo, never cropped */
+  .lead h2 { font-size: 32px; line-height: 1.05; margin: 4px 0 10px; }
+  .lead p { color: #4a3a35; max-width: 64ch; }
+  .lead .cta { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
+
+  /* ---------- the two columns ---------- */
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: stretch; }
+  .left { display: grid; grid-template-rows: auto 1fr; gap: 14px; }
+  .placeholder { min-height: 300px; display: flex; align-items: center; justify-content: center; color: var(--ink-soft); font-size: 14px; border-style: dashed; }
+
+  /* ---------- right column: workshop ---------- */
+  .ws .kick a { color: var(--rose-deep); }
+  .ws h2 { font-size: 26px; margin-bottom: 12px; }
+  .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 0 0 16px; }
+  .metrics div { border-top: 2px solid var(--rose); padding-top: 7px; }
+  .metrics b { font-family: var(--serif); font-size: 26px; font-weight: 600; color: var(--rose-deep); display: block; line-height: 1; }
+  .metrics span { font-size: 11px; color: var(--ink-soft); text-transform: uppercase; letter-spacing: .08em; }
+
+  /* ---------- carousel ---------- */
+  .carousel { border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; background: var(--paper-2); }
+  .carousel .track { display: flex; transition: transform .35s ease; }
+  .carousel .slide { flex: 0 0 100%; min-width: 0; }
+  .carousel .slide .label { font-family: var(--serif); font-size: 17px; font-weight: 600; padding: 10px 14px; background: #fff; border-bottom: 1px solid var(--rule); }
+  .carousel .slide .label span { font-family: var(--sans); font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--rose-deep); margin-right: 8px; }
+  .carousel .slide img { width: 100%; height: auto; max-height: 520px; object-fit: contain; display: block; cursor: zoom-in; background: var(--paper-2); }
+  .carousel .ctl { display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; background: #fff; border-top: 1px solid var(--rule); font-size: 12.5px; color: var(--ink-soft); }
+  .carousel .dots { display: flex; gap: 7px; }
+  .carousel .dots button { width: 8px; height: 8px; border-radius: 50%; border: 1.5px solid var(--rose); background: transparent; padding: 0; cursor: pointer; }
+  .carousel .dots button[aria-current="true"] { background: var(--rose); }
+  .carousel .arrows button { font: inherit; font-weight: 600; font-size: 13px; color: var(--rose-deep); background: transparent; border: 1.5px solid var(--rose); border-radius: 6px; padding: 5px 10px; cursor: pointer; margin-left: 6px; }
+  .carousel .arrows button:hover { background: var(--blush); }
+  .lightbox { position: fixed; inset: 0; background: rgba(58,41,36,.92); display: none; align-items: center; justify-content: center; padding: 24px; z-index: 50; cursor: zoom-out; }
+  .lightbox.open { display: flex; }
+  .lightbox img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 8px; background: #fff; }
+  .lightbox .x { position: absolute; top: 14px; right: 18px; color: #fff; font-size: 28px; background: none; border: 0; cursor: pointer; }
+
+  /* ---------- left column: speaking & recognition ---------- */
+  .blk h2 { font-size: 22px; margin-bottom: 8px; }
+  .talk { font-family: var(--serif); font-size: 16px; font-weight: 500; line-height: 1.3; margin: 2px 0 6px; }
+  #background { text-align: center; }
+  .bio { max-width: 72ch; margin: 0 auto; }
+  .bio p { font-size: 15.5px; line-height: 1.65; color: #4a3a35; margin: 0 0 14px; }
+  .list { list-style: none; margin: 0; padding: 0; }
+  .list li { border-top: 1px solid var(--rule); padding: 8px 0; font-size: 14px; display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: baseline; }
+  .list li:first-child { border-top: 0; padding-top: 0; }
+  .list .w { color: var(--ink-soft); font-size: 12.5px; white-space: nowrap; }
+  .rec { list-style: none; margin: 0; padding: 0; }
+  .rec li { display: grid; grid-template-columns: 56px 1fr; gap: 12px; align-items: center; border-top: 1px solid var(--rule); padding: 8px 0; }
+  .rec li:first-child { border-top: 0; padding-top: 0; }
+  .rec img { width: 56px; height: 56px; object-fit: contain; display: block; }
+  .rec li.pair { grid-template-columns: 116px 1fr; }
+  .rec .imgs { display: flex; gap: 4px; }
+  .rec b { display: block; font-family: var(--serif); font-size: 15.5px; font-weight: 600; line-height: 1.2; }
+  .rec span { font-size: 12.5px; color: var(--ink-soft); }
+
+  /* ---------- writing strip ---------- */
+  .strip { margin-top: 14px; }
+  .strip .posts { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px 24px; }
+  .strip .posts li { font-size: 14px; line-height: 1.35; }
+  .strip .posts a { font-family: var(--serif); font-size: 15px; font-weight: 500; color: var(--ink); }
+  .strip .posts .w { display: block; font-size: 12px; color: var(--ink-soft); margin-top: 2px; }
+
+  /* ---------- research: auto-scrolling strip ---------- */
+  .research { margin-top: 14px; overflow: hidden; }
+  .research .rail { display: flex; gap: 14px; width: max-content; animation: roll 60s linear infinite; padding: 4px 0; }
+  .research:hover .rail, .research:focus-within .rail { animation-play-state: paused; }
+  @keyframes roll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) { .research .rail { animation: none; width: auto; flex-wrap: wrap; } .research .rail .card.dup { display: none; } }
+  .card { flex: 0 0 300px; border: 1px solid var(--rule); border-radius: 10px; background: var(--paper); padding: 14px 16px; }
+  .card svg { width: 100%; height: 110px; display: block; margin-bottom: 10px; }
+  .card b { display: block; font-family: var(--serif); font-size: 16px; font-weight: 600; line-height: 1.2; margin-bottom: 4px; }
+  .card p { font-size: 13px; color: var(--ink-soft); margin: 0 0 6px; line-height: 1.4; }
+  .card .w { font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--rose-deep); }
+
+  .research { overflow: hidden; }
+  .research .rail { display: flex; gap: 18px; width: max-content; animation: roll 55s linear infinite; padding: 4px 0; }
+  .research:hover .rail, .research:focus-within .rail { animation-play-state: paused; }
+  @keyframes roll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) { .research .rail { animation: none; width: auto; flex-wrap: wrap; } .research .rail .dup { display: none; } }
+  .rf { margin: 0; flex: 0 0 auto; border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; background: #fff; }
+  .rf img { display: block; height: 320px; width: auto; cursor: zoom-in; }
+  .rf figcaption { padding: 9px 14px; border-top: 1px solid var(--rule); font-size: 13px; display: flex; justify-content: space-between; gap: 16px; }
+  .rf figcaption b { font-family: var(--serif); font-weight: 600; font-size: 15px; }
+  .rf figcaption span { color: var(--ink-soft); white-space: nowrap; }
+  #background { text-align: center; }
+  .bio { max-width: 72ch; margin: 0 auto; }
+  .bio p { font-size: 15.5px; line-height: 1.65; color: #4a3a35; margin: 0 0 14px; }
+  .list { list-style: none; margin: 0; padding: 0; }
+  .list li { border-top: 1px solid var(--rule); padding: 8px 0; font-size: 14px; display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: baseline; }
+  .list li:first-child { border-top: 0; padding-top: 0; }
+  .list .w { color: var(--ink-soft); font-size: 12.5px; white-space: nowrap; }
+  .lightbox { position: fixed; inset: 0; background: rgba(58,41,36,.92); display: none; align-items: center; justify-content: center; padding: 24px; z-index: 50; cursor: zoom-out; }
+  .lightbox.open { display: flex; }
+  .lightbox img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 8px; background: #fff; }
+  .lightbox .x { position: absolute; top: 14px; right: 18px; color: #fff; font-size: 28px; background: none; border: 0; cursor: pointer; }
+  @media (max-width: 900px) { .rf img { height: 220px; } }
+  .timeline { list-style: none; margin: 6px 0 0; padding: 0; font-size: 14px; }
+  .timeline li { display: grid; grid-template-columns: 110px 1fr; gap: 12px; padding: 7px 0; border-top: 1px solid var(--rule); }
+  .timeline li:first-child { border-top: 0; }
+  .timeline .y { color: var(--ink-soft); }
+
+  footer { margin-top: 14px; font-size: 12px; color: var(--ink-soft); }
+
+  @media (max-width: 900px) {
+    .cols { grid-template-columns: 1fr; }
+    .strip .posts { grid-template-columns: 1fr; }
+    .lead { grid-template-columns: 1fr; }
+    .metrics { grid-template-columns: 1fr 1fr; }
+    .lead h2 { font-size: 28px; }
+  }
+  @media (max-width: 560px) { .wrap { padding: 18px 14px 28px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- ============================ HEADER (common, full width) ============================ -->
+<header>
+  <h1>Heena Ugale</h1>
+  <div class="links">
+    <a href="mailto:heenajvs@gmail.com">heenajvs@gmail.com</a>
+    <a href="https://www.linkedin.com/in/heena-ugale/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/heenajvs" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://medium.com/@heenajvs" target="_blank" rel="noopener">Medium</a>
+    <a class="nav" href="index.html">← Home</a>
+  </div>
+</header>
+
+<div class="tile tint lead" style="grid-template-columns:1fr;text-align:center">
+  <div style="max-width:60ch;margin:0 auto">
+    <div class="kick">Research</div>
+    <h2>Applied ML before the agents</h2>
+    <p>Eight years of research and predictive modelling in healthcare, pharma, chemicals and sustainability — the work that shaped how I evaluate AI systems today.</p>
+  </div>
+</div>
+
+<div class="tile research" id="research" aria-label="Research">
+  <div class="kick" style="margin-bottom:8px">Research · hover to pause · click to enlarge</div>
+  <div class="rail">
+    <figure class="rf"><img src="assets/blueprint-patient-matching.png" alt="Patient matching across two encrypted datasets"><figcaption><b>Patient matching across two encrypted datasets</b><span>AstraZeneca</span></figcaption></figure>
+    <figure class="rf"><img src="assets/cartoon-gan-cgm-imputation.png" alt="GANs imputing sparse CGM data for Type 2 diabetes"><figcaption><b>GANs imputing sparse CGM data for Type 2 diabetes</b><span>Novo Nordisk × University of Washington</span></figcaption></figure>
+    <figure class="rf"><img src="assets/cartoon-clinical-trial-xgboost.png" alt="XGBoost early-adopter segmentation for clinical trials"><figcaption><b>XGBoost early-adopter segmentation for clinical trials</b><span>AstraZeneca</span></figcaption></figure>
+    <figure class="rf dup" aria-hidden="true"><img src="assets/blueprint-patient-matching.png" alt="Patient matching across two encrypted datasets"><figcaption><b>Patient matching across two encrypted datasets</b><span>AstraZeneca</span></figcaption></figure>
+    <figure class="rf dup" aria-hidden="true"><img src="assets/cartoon-gan-cgm-imputation.png" alt="GANs imputing sparse CGM data for Type 2 diabetes"><figcaption><b>GANs imputing sparse CGM data for Type 2 diabetes</b><span>Novo Nordisk × University of Washington</span></figcaption></figure>
+    <figure class="rf dup" aria-hidden="true"><img src="assets/cartoon-clinical-trial-xgboost.png" alt="XGBoost early-adopter segmentation for clinical trials"><figcaption><b>XGBoost early-adopter segmentation for clinical trials</b><span>AstraZeneca</span></figcaption></figure>
+  </div>
+</div>
+
+<div class="tile blk tint" style="margin-top:14px" id="background">
+  <div class="kick">Background</div>
+  <div class="bio">
+    <p>One question runs through all of my work: how do you build a model you can trust with a decision that matters — and then prove it?</p>
+    <p>It started in an undergraduate research project at IIT Bombay, where a well-posed model changed a real decision. BASF took the same idea out of the lab and into a working chemical business — my first time building for a large industrial system, with real constraints and real consequences. Cornell turned that instinct into a discipline: a master's thesis on time-series forecasting for drug discovery, grounded in operations research and the habit of stating every trade-off in numbers.</p>
+    <p>Healthcare brought both scale and stakes. Recovering missing glucose-monitor data for people with Type 2 diabetes with Novo Nordisk and the University of Washington, then three years as an AI architect in oncology at AstraZeneca — matching patients across millions of encrypted records, predicting clinical-trial engagement, building retrieval over sensitive data with privacy designed in. When a wrong answer reaches a patient, evaluation becomes the first thing you build.</p>
+    <p>At Microsoft the question is the same and the system is new. I work with independent software vendors taking agentic AI to production, and turn what we learn into an open-source reference implementation, workshops, executive briefings, talks and writing.</p>
+    <p>Research taught me to test before I trust; engineering, to build for the system as it actually is; selling, to begin with the customer's problem rather than the product. Of the three, the last matters most to me — the best technical conversations start by understanding what the person across the table is really trying to do, and that is where I am at my best.</p>
+  </div>
+  </div>
+</div>
+
+<footer>© 2026 Heena Ugale</footer>
+</div>
+<div class="lightbox" id="lightbox" role="dialog" aria-label="Enlarged image"><button class="x" type="button" aria-label="Close">×</button><img src="" alt=""></div>
+<script>
+(function () {
+  var lb = document.getElementById('lightbox'), lbImg = lb.querySelector('img');
+  document.querySelectorAll('.rf img').forEach(function (im) { im.addEventListener('click', function () { lbImg.src = im.src; lbImg.alt = im.alt; lb.classList.add('open'); }); });
+  lb.addEventListener('click', function () { lb.classList.remove('open'); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') lb.classList.remove('open'); });
+})();
+</script>
+</body>
+</html>
